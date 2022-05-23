@@ -35,6 +35,17 @@ void insert_node(struct node *n)
 {
     
 }
+
+struct Node *list_search(struct Node *head,int k)
+{
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp = head;
+    while(temp!=NULL && temp->data != k)
+    {
+        temp = temp->next;
+    }
+    return temp;
+}
 int main()
 {
     /*Initialize Node*/

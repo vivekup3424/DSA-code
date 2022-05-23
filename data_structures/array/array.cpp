@@ -1,15 +1,36 @@
 #include <iostream>
-#include <array>
 using namespace std;
+
+void input_array(float *arr,int length)
+{
+    float num;
+    int counter = 0;
+    while (counter!=length)
+    {
+        scanf("%f",arr+counter);
+        counter++;
+    }
+}
+void transverse_array(float arr[],int no_elements)
+{
+    for (int i = 0; i < no_elements; i++)
+    {
+        printf("%0.2f ",*(arr+i));
+    }
+    printf("\n");
+}
 int main()
 {
-    int arr[] = {1,2,3,4,5};
-    for (int i = 0; i < sizeof(arr)/sizeof(int); i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << "\n";
-    return 0;
+    float arr[100];
+    int length;
+    printf("Enter the length of array: ");
+    scanf("%d",&length);
+    printf("Enter the elements of array: \n");
+    input_array(arr,length);
+    printf("\n*************\n");
+    printf("The given array is: \n");
+    transverse_array(arr,length);
+
 }
 /*Advantages of using arrays: 
 
